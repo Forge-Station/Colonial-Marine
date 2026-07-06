@@ -7,14 +7,10 @@
   - type: Sprite
     sprite: _CCM14/Objects/Weapons/Guns/Shotguns/Type12G/type12g_inhands.rsi
     layers:
+    - state: icon
+      sprite: _CCM14/Objects/Weapons/Guns/Shotguns/Type12G/type12g_icon.rsi
     - state: base
       sprite: _CCM14/Objects/Weapons/Guns/Shotguns/Type12G/type12g_icon.rsi
-    - state: bolt-open
-      sprite: _CCM14/Objects/Weapons/Guns/Shotguns/Type12G/type12g_icon.rsi
-      map: [ "enum.GunVisualLayers.Base" ]
-    - state: mag-0
-      sprite: _CCM14/Objects/Weapons/Guns/Shotguns/Type12G/type12g_icon.rsi
-      map: [ "enum.GunVisualLayers.Mag" ]
   - type: Clothing
     sprite: _CCM14/Objects/Weapons/Guns/Shotguns/Type12G/type12g_inhands.rsi
   - type: Gun
