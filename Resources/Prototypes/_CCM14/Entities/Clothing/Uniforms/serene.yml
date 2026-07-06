@@ -25,7 +25,7 @@
   description: Standart tactical uniform of Serene Solutions mercenaries. Combination of Federations' reliability and quality.
   components:
   - type: Sprite
-    sprite: _CCM14/Clothing/Uniforms/Serene/medic.rsi
+    sprite: _CCM14/Objects/Clothing/Uniforms/Serene/medic.rsi
 
 - type: entity
   parent: CCMJumpsuitSereneSolutions
