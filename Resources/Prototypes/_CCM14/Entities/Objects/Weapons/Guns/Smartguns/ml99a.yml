@@ -274,7 +274,7 @@
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
-    proto: CCRBulletSmartGunML109AFlak
+    proto: CCMBulletSmartGunML109AFlak
   - type: Tag
     tags:
     - CCMCartridgeSmartGunML109AFlak
@@ -329,7 +329,7 @@
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
-    proto: CCRBulletSmartGunML109AAS
+    proto: CCMBulletSmartGunML109AAS
   - type: Tag
     tags:
     - CCMCartridgeSmartGunML109AAS
