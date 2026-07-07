@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.2-fix-physics
   forkId: ""
   forkVersion: ""
-  time: 07/07/2026 19:50:51
-  entityCount: 12794
+  time: 07/07/2026 21:14:03
+  entityCount: 12787
 maps:
 - 1
 grids:
@@ -23210,7 +23210,7 @@ entities:
     - type: CMDoubleDoor
       lastOpeningAt: 618.0327152
     - type: Door
-      secondsUntilStateChange: -103266.92
+      secondsUntilStateChange: -104893.36
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -23224,7 +23224,7 @@ entities:
     - type: CMDoubleDoor
       lastOpeningAt: 618.0327152
     - type: Door
-      secondsUntilStateChange: -103266.92
+      secondsUntilStateChange: -104893.36
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -25204,25 +25204,25 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 3932
           - 3931
-          - 3930
-          - 3929
-          - 3920
-          - 9523
-          - 10651
-          - 10655
-          - 10610
-          - 10614
-          - 9783
-          - 10536
-          - 10538
-          - 10541
-          - 10542
-          - 3919
-          - 3911
-          - 3910
           - 3509
+          - 3910
+          - 3911
+          - 3919
+          - 10542
+          - 10541
+          - 10538
+          - 10536
+          - 9783
+          - 10614
+          - 10610
+          - 10655
+          - 10651
+          - 9523
+          - 3920
+          - 3929
+          - 3930
+          - 3932
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -25709,11 +25709,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 5215
-    components:
-    - type: Transform
-      pos: 15.250909,118.47318
-      parent: 1
   - uid: 11489
     components:
     - type: Transform
@@ -70067,11 +70062,6 @@ entities:
     - type: Transform
       pos: -33.33721,-13.593457
       parent: 1
-  - uid: 11800
-    components:
-    - type: Transform
-      pos: 15.651544,117.768654
-      parent: 1
   - uid: 12123
     components:
     - type: Transform
@@ -70092,7 +70082,7 @@ entities:
   - uid: 11801
     components:
     - type: Transform
-      pos: 15.385919,117.38584
+      pos: 16.442356,118.41598
       parent: 1
   - uid: 12120
     components:
@@ -80652,13 +80642,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: RMCMagazineSentry
-  entities:
-  - uid: 11790
-    components:
-    - type: Transform
-      pos: 16.625738,118.40463
-      parent: 1
 - proto: RMCMannequin
   entities:
   - uid: 3528
@@ -82170,18 +82153,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -5.511704,90.365295
-      parent: 1
-- proto: RMCPamphletAdminEngineer2
-  entities:
-  - uid: 5119
-    components:
-    - type: Transform
-      pos: 15.756925,118.55157
-      parent: 1
-  - uid: 12813
-    components:
-    - type: Transform
-      pos: 15.639418,118.62983
       parent: 1
 - proto: RMCPamphletAdminMedical4
   entities:
@@ -85976,21 +85947,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 21.467558,119.37639
       parent: 1
-- proto: RMCSentryLaptop
-  entities:
-  - uid: 11600
-    components:
-    - type: Transform
-      pos: 15.537399,118.473305
-      parent: 1
-- proto: RMCSentryOmni
-  entities:
-  - uid: 11625
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 16.4102,118.60602
-      parent: 1
 - proto: RMCSheetCardboard30
   entities:
   - uid: 1119
@@ -88932,17 +88888,6 @@ entities:
     - type: Transform
       pos: -36.511562,10.4375515
       parent: 1
-- proto: RMCTeslaOverclocked
-  entities:
-  - uid: 12815
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 16.291012,118.49516
-      parent: 1
-    - type: SentryTargeting
-      friendlyFactions:
-      - UNMC
 - proto: RMCThreeSunEmpireCup
   entities:
   - uid: 11724
@@ -88963,6 +88908,13 @@ entities:
     components:
     - type: Transform
       pos: 17.5,20.5
+      parent: 1
+- proto: RMCToolboxMechanicalFilled
+  entities:
+  - uid: 3947
+    components:
+    - type: Transform
+      pos: 15.473739,118.727455
       parent: 1
 - proto: RMCToolboxSyndicate
   entities:
