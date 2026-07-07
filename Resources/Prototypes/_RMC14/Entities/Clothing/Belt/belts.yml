@@ -503,7 +503,7 @@
 # CCM14 ADD
       - CCMMagazineSmartGunML109AAS
       - CCMMagazineSmartGunHeavy
-      - CCMMagazineSmartGunML109AWP
+      - CCMMagazineSmartGunML109AFlak
 # CCM14 End
   - type: FixedItemSizeStorage
   - type: IgnoreContentsSize
@@ -513,7 +513,7 @@
 # CCM14 ADD
       - CCMMagazineSmartGunML109AAS
       - CCMMagazineSmartGunHeavy
-      - CCMMagazineSmartGunML109AWP
+      - CCMMagazineSmartGunML109AFlak
 # CCM14 End
   - type: ItemCamouflage
     camouflageVariations:
@@ -563,7 +563,7 @@
 # CCM14 ADD
       - CCMMagazineSmartGunML109AAS
       - CCMMagazineSmartGunHeavy
-      - CCMMagazineSmartGunML109AWP
+      - CCMMagazineSmartGunML109AFlak
 # CCM14 End
   - type: FixedItemSizeStorage
   - type: IgnoreContentsSize
@@ -573,7 +573,7 @@
 # CCM14 ADD
       - CCMMagazineSmartGunML109AAS
       - CCMMagazineSmartGunHeavy
-      - CCMMagazineSmartGunML109AWP
+      - CCMMagazineSmartGunML109AFlak
 # CCM14 End
   - type: LimitedStorage
     limits:
