@@ -96,7 +96,7 @@
     proto: CCMCartridgeSmartGunML99A
     capacity: 150
   - type: Sprite
-    sprite: _CCM14/Objects/Weapons/Ammunition/SmartGun/ml99a_magazine.rsi
+    sprite: _CCM14/Objects/Weapons/Ammunition/Smartgun/ml99a_magazine.rsi
   - type: Tag
     tags:
     - CCMMagazineSmartGunHeavy
