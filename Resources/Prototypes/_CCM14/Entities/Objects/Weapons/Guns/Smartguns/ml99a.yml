@@ -261,7 +261,7 @@
     sprite: _CCM14/Objects/Weapons/Ammunition/Smartgun/ml109a_magazine_flak.rsi
   - type: Tag
     tags:
-    - CCMMagazineSmartGunML109AWP
+    - CCMMagazineSmartGunML109AFlak
 
 - type: entity
   parent: CMBaseCartridgeRifle
