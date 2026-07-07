@@ -257,7 +257,6 @@
   - type: Tag
     tags:
     - CCMMagazineSmartGunML109AWP
-    - CMMagazineRifle
 
 - type: entity
   parent: CMBaseCartridgeRifle
@@ -313,7 +312,6 @@
   - type: Tag
     tags:
     - CCMMagazineSmartGunML109AAS
-    - CMMagazineRifle
 
 - type: entity
   parent: CMBaseCartridgeRifle
