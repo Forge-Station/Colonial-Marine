@@ -6,15 +6,15 @@
   suffix: PMC
   components:
   - type: Sprite
-    sprite: _CCM14/Objects/Weapons/Guns/SmartGuns/ml99a.rsi
+    sprite: _CCM14/Objects/Weapons/Guns/Smartguns/ml99a.rsi
     layers:
     - state: base
-      sprite: _CCM14/Objects/Weapons/Guns/SmartGuns/ml99a.rsi
+      sprite: _CCM14/Objects/Weapons/Guns/Smartguns/ml99a.rsi
     - state: mag-0
-      sprite: _CCM14/Objects/Weapons/Guns/SmartGuns/ml99a.rsi
+      sprite: _CCM14/Objects/Weapons/Guns/Smartguns/ml99a.rsi
       map: [ "enum.GunVisualLayers.Mag" ]
   - type: Clothing
-    sprite: _CCM14/Objects/Weapons/Guns/SmartGuns/ml99a.rsi
+    sprite: _CCM14/Objects/Weapons/Guns/Smartguns/ml99a.rsi
     slots:
       gun_magazine:
         name: Magazine
@@ -253,7 +253,7 @@
     proto: CCMCartridgeSmartGunML109AFlak
     capacity: 45
   - type: Sprite
-    sprite: _CCM14/Objects/Weapons/Ammunition/SmartGun/ml109a_magazine_flak.rsi
+    sprite: _CCM14/Objects/Weapons/Ammunition/Smartgun/ml109a_magazine_flak.rsi
   - type: Tag
     tags:
     - CCMMagazineSmartGunML109AWP
@@ -284,7 +284,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 40
+        Piercing: 35
   - type: RMCProjectileDamageFalloff
     thresholds:
     - range: 14
@@ -309,7 +309,7 @@
     proto: CCMCartridgeSmartGunML109AAS
     capacity: 50
   - type: Sprite
-    sprite: _CCM14/Objects/Weapons/Ammunition/SmartGun/ml109a_magazine_as.rsi
+    sprite: _CCM14/Objects/Weapons/Ammunition/Smartgun/ml109a_magazine_as.rsi
   - type: Tag
     tags:
     - CCMMagazineSmartGunML109AAS
