@@ -83,6 +83,10 @@
       path: /Audio/_CCM14/Weapons/Guns/Gunshots/ml99a.ogg
       params:
         volume: -2
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: HeldSpeedModifier
 
 - type: entity
   parent: RMCMagazineSmartGun
