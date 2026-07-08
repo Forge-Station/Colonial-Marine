@@ -20,7 +20,7 @@
       choices: { CMGunAttachments: 1 } #CCM14 Add
       entries:
       - id: CMSmartGunOperatorEquipmentCase
-      - id: CCMSmartGunOperatorML99ACase
+      - id: CCMSmartGunOperatorML99ACase #CCM14 Add
     - name: Gun Attachments
       choices: { CMGunAttachments: 1 }
       entries:
