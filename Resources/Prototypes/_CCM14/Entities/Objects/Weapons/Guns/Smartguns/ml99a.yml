@@ -168,7 +168,8 @@
   - RMCAttachableToggleableBase
   id: CCMAttachmentML109AUnderbarrel
   name: ML109A Smart attachement
-  description: An AEGIS U7 tactical shotgun. Attaches to the underbarrel of most weapons. Only capable of loading up to five buckshot shells. Specialized for breaching into buildings.
+  description: Who even read this
+  suffix: DO NOT MAP
   components:
   - type: Sprite
     state: masterkey
@@ -226,10 +227,10 @@
     actionDesc: Switch to using the underbarrel smart gun
     icon:
       sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
-      state: masterkey
+      state: flamer_nozzle 
     iconActive:
       sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
-      state: masterkey-on
+      state: flamer_nozzle-on
   - type: AttachableVisuals
   - type: WieldedCrosshair
     rsi:
