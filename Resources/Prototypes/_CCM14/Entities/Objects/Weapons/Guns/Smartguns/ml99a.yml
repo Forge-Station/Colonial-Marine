@@ -84,8 +84,8 @@
       params:
         volume: -2
   - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
+    walkModifier: 0.6
+    sprintModifier: 0.6
   - type: HeldSpeedModifier
 
 - type: entity
