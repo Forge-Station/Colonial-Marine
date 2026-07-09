@@ -370,3 +370,17 @@
     - id: CCMMagazineSmartGunML99A
     - id: CCMMagazineSmartGunML109AFlak
     - id: CCMMagazineSmartGunML109AAS
+
+#
+
+- type: entity
+  parent: RMCCrateAmmo
+  id: CCMCrateMagazineSmartGunML99A
+  name: ML99A & ML109A smart gun ammo crate (2x)
+  components:
+  - type: StorageFill
+    contents:
+    - id: CCMMagazineSmartGunML99A
+      amount: 2
+    - id: CCMMagazineSmartGunML109AFlak
+    - id: CCMMagazineSmartGunML109AAS
