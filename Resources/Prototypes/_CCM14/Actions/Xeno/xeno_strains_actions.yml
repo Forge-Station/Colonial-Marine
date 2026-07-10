@@ -129,9 +129,9 @@
   - type: XenoAcidMine
     range: 10
     plasmaCost: 70
-    blastProto:
+    blastProto: RMCEffectXenoBurrowerDeepImpaleTelegraph
     empoweredBlastProto: RMCEffectXenoBurrowerDeepImpaleTelegraph
-    actionIconEmpowered: RMCEffectXenoBurrowerDeepImpaleTelegraph
+    actionIconEmpowered:
       sprite: _RMC14/Actions/xeno_actions.rsi
       state: rav_eviscerate
   - type: TargetAction
