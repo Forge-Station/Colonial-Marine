@@ -67,7 +67,7 @@
     impactEffect: null
     damage:
       types:
-        Heat: 60
+        Heat: 47.5
   - type: CMArmorPiercing
     amount: 25
   - type: XenoProjectile
@@ -139,7 +139,7 @@
     impactEffect: null
     damage:
       types:
-        Blunt: 20
+        Blunt: 15
         Structural: 60
   - type: CMArmorPiercing
     amount: 10
