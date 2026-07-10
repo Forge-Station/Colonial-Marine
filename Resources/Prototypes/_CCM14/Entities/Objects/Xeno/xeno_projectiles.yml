@@ -67,7 +67,7 @@
     impactEffect: null
     damage:
       types:
-        Heat: 27.5
+        Heat: 60
   - type: CMArmorPiercing
     amount: 25
   - type: XenoProjectile
@@ -104,9 +104,10 @@
     - state: neurotoxin
       shader: unshaded
   - type: DrainOnHit
+    drainAmount: 20
   - type: XenoSlowingSpitProjectile
     armorResistsKnockdown: false
-    slow: 4
+    slow: 9
     paralyze: 0
   - type: Projectile
     impactEffect: null
@@ -116,7 +117,7 @@
   - type: XenoProjectile
     deleteOnFriendlyXeno: false
   - type: ProjectileMaxRange
-    max: 6.666
+    max: 9
   - type: RMCProjectileAccuracy
     accuracy: 999
   - type: TimedDespawn
@@ -138,7 +139,7 @@
     impactEffect: null
     damage:
       types:
-        Blunt: 10
+        Blunt: 20
         Structural: 60
   - type: CMArmorPiercing
     amount: 10
