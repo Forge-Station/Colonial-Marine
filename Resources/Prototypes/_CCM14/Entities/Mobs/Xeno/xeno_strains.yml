@@ -370,7 +370,11 @@
         Heat: 0
   - type: XenoEvolution
     strains: []
-
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      375: Critical
+      475: Dead
 # Burrower Jaunt
 
 - type: entity
