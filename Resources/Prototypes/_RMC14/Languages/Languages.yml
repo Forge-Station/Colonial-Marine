@@ -117,7 +117,7 @@
   expectedVocabularySize: 140
   obfuscationMethod:
     !type:SyllableObfuscation
-    replacement: ["από", "ξεσκ", "ρε", "τα", "που", "τερά", "στια", "κατα"]
+    replacement: ["Koyl", "ro", "endur", "mili", "dica", "holi", "san", "just", "got", "vonj"]
     minSyllables: 2
     maxSyllables: 5
   speechOverride:
