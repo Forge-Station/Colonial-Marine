@@ -79,7 +79,7 @@
 
 - type: language
   id: Spanish
-  name: "Транслит Великой Империи Нотда."
+  name: "Транслит Великой Империи Нотда"
   description: "Язык многих аристократических родов ВИН, локально распространён среди беженцев из ВИН."
   isVisibleLanguage: true
   typefaceId: DefaultItalic
