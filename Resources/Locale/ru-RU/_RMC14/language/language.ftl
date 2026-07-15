@@ -4,31 +4,31 @@ language-menu-known-tab = Known Languages
 language-menu-learning-tab = Learning Languages
 
 # Language names
-language-English-name = English
-language-Xeno-name = Xenonid
-language-Spanish-name = Spanish
-language-French-name = French
-language-Japanese-name = Japanese
-language-Chinese-name = Chinese
-language-Russian-name = Russian
-language-German-name = German
-language-Scandinavian-name = Scandinavian
-language-SignLanguage-name = Sign Language
-language-Primitive-name = Primitive
+language-English-name = Общегалактический
+language-Xeno-name = Язык Ксеноморфов
+language-Spanish-name = Транслит Великой Империи Нотда
+language-French-name = Транслит Ноократии Эранта
+language-Japanese-name = Транслит Империи Миртана
+language-Chinese-name = Советский разговорный
+language-Russian-name = Советский официальный
+language-German-name = Транслит Умпорской Федерации
+language-Scandinavian-name = Фронтирский диалект
+language-SignLanguage-name = Язык жестов
+language-Primitive-name = Примитивный язык
 
 # Language descr
-language-English-description = Earth language.
-language-Xeno-description = The alien language of the Xenonids.
-language-Xeno-first-contact = The sounds follow an alien hive pattern.
-language-Spanish-description = Earth language.
-language-French-description = Earth language.
-language-Japanese-description = Earth language.
-language-Chinese-description = Earth language.
-language-Russian-description = Earth language.
-language-German-description = Earth language.
-language-Scandinavian-description = Earth language.
-language-SignLanguage-description = A visual language using hand gestures and body movements.
-language-Primitive-description = A primitive language of screeches, hoots, and gestures.
+language-English-description = Транслит, на котором говорят все!
+language-Xeno-description = Инопланетный язык ксеноморфов.
+language-Xeno-first-contact = Инопланетный язык ксеноморфов.
+language-Spanish-description = Язык многих аристократических родов ВИН, локально распространён среди беженцев из ВИН.
+language-French-description = Транслит научной и художественной элиты общества.
+language-Japanese-description = То, на чём говорят сыны и дочери Императора Миртана.
+language-Chinese-description = На этом диалекте говорит весь народ СССП.
+language-Russian-description = На этом диалекте говорит вся номенклатура и гос.органы.
+language-German-description = Транслит, на котором говорят верные труженники Федерации.
+language-Scandinavian-description = Это диалект, свойственный жителям корпоративной зоны Большой Пятёрки и других областей Фронтира. Является диалектом общегалактического.
+language-SignLanguage-description = Язык состоящий из движений руками и телом.
+language-Primitive-description = Примитивный язык животных, состоящий из различных звуков.
 
 # Game hud
 game-hud-open-language-menu-button-tooltip = Open Language Menu (Change Speaking Language)
