@@ -117,7 +117,7 @@
   expectedVocabularySize: 140
   obfuscationMethod:
     !type:SyllableObfuscation
-    replacement: ["Koyl", "ro", "endur", "mili", "dica", "holi", "san", "just", "got", "vonj"]
+    replacement: ["santa", "holai", "caes", "yro", "kali", "milit", "knif", "yrob", "kor", "asus"]
     minSyllables: 2
     maxSyllables: 5
   speechOverride:
