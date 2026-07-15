@@ -103,7 +103,7 @@
 
 - type: language
   id: Japanese
-  name: "Транслит Империи Миртана."
+  name: "Транслит Империи Миртана"
   description: "То, на чём говорят сыны и дочери Императора Миртана."
   isVisibleLanguage: true
   typefaceId: NotoSansDisplay
