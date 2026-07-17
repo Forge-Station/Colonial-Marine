@@ -241,7 +241,7 @@
   - type: RMCPlanetMapPrototype
     map: /Maps/_RMC14/prison.yml
     camouflage: Classic
-    minPlayers: 25 # CCM14-mappool
+    minPlayers: 50 # CCM14-mappool
     announcement: "Пехота! Был получен автоматический сигнал бедствия из приграничной тюрьмы строгого режима. Должен сказать, что я крайне удивлён, что такие заведения вообще работают чуть ли не в упор к фронту, но, видимо, они уже за это поплатились.
       Для общего понимания,
       Обозначение - орбитальная тюрьма общего режима.
@@ -293,111 +293,113 @@
         CMSurvivorScientist: CMSurvivor
         CMSurvivorSecurity: CMSurvivor
 
-- type: entity
-  id: RMCPlanetTrijent
-  name: Trijent Dam
-  components:
-  - type: RMCPlanetMapPrototype
-    map: /Maps/_CCM14/Planets/Z-level/Trijent/devtrijent/devtrijent0.yml
-    camouflage: Desert
-    announcement: "Пехота! Была потеряна связь с корпоративной колонией на планете Райджин. Видимо, туда наш путь теперь и проложен. Хех, удачи!
-            Для общего понимания,
-      Обозначение колонии - стандартная колония, по совместительству аванпост добычи.
-      Температура на поверхности составляет 23 °C.
-      Заведующий колонии неизвестен.
-      Биосканирование Выдаёт ошибку.
+# CCM14-start
+# - type: entity
+#   id: RMCPlanetTrijent
+#   name: Trijent Dam
+#   components:
+#   - type: RMCPlanetMapPrototype
+#     map: /Maps/_RMC14/trijent.yml
+#     camouflage: Desert
+#     announcement: "Пехота! Была потеряна связь с корпоративной колонией на планете Райджин. Видимо, туда наш путь теперь и проложен. Хех, удачи!
+#             Для общего понимания,
+#       Обозначение колонии - стандартная колония, по совместительству аванпост добычи.
+#       Температура на поверхности составляет 23 °C.
+#       Заведующий колонии неизвестен.
+#       Биосканирование Выдаёт ошибку.
 
-      Авторизовано: капитан Леон Гранц."
-    minPlayers: 25 # CCM14-mappool
-    #smallHostVariants:
-      #RMCMobSmallHostStok
-    nightmareScenarios:
-    - scenarioName: none # Reduce this to 0.5 once CLF survivors are in
-      scenarioProbability: 0.6
-    - scenarioName: spp_bar
-      scenarioProbability: 0.4
-    survivorJobVariants:
-      CMSurvivor:
-      - CMSurvivor: -1
-      - RMCSurvivorCivilianUnique: -1
-      - RMCSurvivorHybrisaTMCCMiner: -1
-      - CMSurvivorTrijentChaplain: 1
-      - RMCSurvivorHybrisaFireProtectionSpecialist: 1
-      CMSurvivorCorporate:
-      - CMSurvivorICB: 1
-      - CMSurvivorTrijentCorporate: 1
-      CMSurvivorDoctor:
-      - RMCSurvivorHybrisaEMTParamedic: 3
-      - CMSurvivorTrijentDoctor: 3
-      CMSurvivorEngineer:
-      - CMSurvivorTrijentEngiHydro: 2
-      - CMSurvivorTrijentDamTech: 2
-      - CMSurvivorTrijentTrucker: 2
-      CMSurvivorSecurity:
-      - CMSurvivorTrijentGoon: 1
-      - CMSurvivorCMBDeputy: 1
-      CMSurvivorScientist:
-      - CMSurvivorTrijentResearcher: 2
-    survivorJobScenarios:
-      spp_bar:
-      - CMSurvivorDoctor: 1
-      - CMSurvivorEngineer: 1
-      - CMSurvivorSecurity: 2
-      - CMSurvivor: -1
-    survivorJobVariantScenarios:
-      spp_bar:
-        CMSurvivorDoctor:
-        - RMCSurvivorSPPCrashlandMedic: 1
-        CMSurvivorEngineer:
-        - RMCSurvivorSPPCrashlandSapper: 1
-        CMSurvivorSecurity:
-        - RMCSurvivorSPPCrashlandSL: 1
-        - RMCSurvivorSPPCrashlandSpec: 1
-        CMSurvivor:
-        - RMCSurvivorSPPCrashlandSoldier: -1
-    survivorJobOverrideScenarios:
-      spp_bar:
-        CMSurvivorScientist: CMSurvivorDoctor
-        CMSurvivorCorporate: CMSurvivor
-#    survivorJobVariantScenarios:
-#      clf_pods:
-#        CMSurvivor:
-#        - : -1
-#        CMSurvivorCorporate:
-#        - : 1
-#        - : -1
-#        CMSurvivorDoctor:
-#        - : 1
-#        - : -1
-#        CMSurvivorEngineer:
-#        - : 1
-#        - : -1
-#        CMSurvivorSecurity:
-#        - : 1
-#        - : -1
-#        CMSurvivorScientist:
-#        - : -1
-#    survivorJobVariantScenarios:
-#      spp_bar:
-#        CMSurvivor:
-#        - : -1
-#        CMSurvivorCorporate:
-#        - : 1
-#        - : -1
-#        CMSurvivorDoctor:
-#        - : 1
-#        - : -1
-#        CMSurvivorEngineer:
-#        - : 1
-#        - : -1
-#        CMSurvivorSecurity:
-#        - : 1
-#        - : -1
-#        CMSurvivorScientist:
-#        - : -1
-#  - type: MCPlanetMapPrototype
-#    mapsAbove:
-#    - Maps/_CCM14/Planets/Z-level/Trijent/devtrijent/devtrijent1.yml
+#       Авторизовано: капитан Леон Гранц."
+#     minPlayers: 50 # CCM14-mappool
+#     #smallHostVariants:
+#       #RMCMobSmallHostStok
+#     nightmareScenarios:
+#     - scenarioName: none # Reduce this to 0.5 once CLF survivors are in
+#       scenarioProbability: 0.6
+#     - scenarioName: spp_bar
+#       scenarioProbability: 0.4
+#     survivorJobVariants:
+#       CMSurvivor:
+#       - CMSurvivor: -1
+#       - RMCSurvivorCivilianUnique: -1
+#       - RMCSurvivorHybrisaTMCCMiner: -1
+#       - CMSurvivorTrijentChaplain: 1
+#       - RMCSurvivorHybrisaFireProtectionSpecialist: 1
+#       CMSurvivorCorporate:
+#       - CMSurvivorICB: 1
+#       - CMSurvivorTrijentCorporate: 1
+#       CMSurvivorDoctor:
+#       - RMCSurvivorHybrisaEMTParamedic: 3
+#       - CMSurvivorTrijentDoctor: 3
+#       CMSurvivorEngineer:
+#       - CMSurvivorTrijentEngiHydro: 2
+#       - CMSurvivorTrijentDamTech: 2
+#       - CMSurvivorTrijentTrucker: 2
+#       CMSurvivorSecurity:
+#       - CMSurvivorTrijentGoon: 1
+#       - CMSurvivorCMBDeputy: 1
+#       CMSurvivorScientist:
+#       - CMSurvivorTrijentResearcher: 2
+#     survivorJobScenarios:
+#       spp_bar:
+#       - CMSurvivorDoctor: 1
+#       - CMSurvivorEngineer: 1
+#       - CMSurvivorSecurity: 2
+#       - CMSurvivor: -1
+#     survivorJobVariantScenarios:
+#       spp_bar:
+#         CMSurvivorDoctor:
+#         - RMCSurvivorSPPCrashlandMedic: 1
+#         CMSurvivorEngineer:
+#         - RMCSurvivorSPPCrashlandSapper: 1
+#         CMSurvivorSecurity:
+#         - RMCSurvivorSPPCrashlandSL: 1
+#         - RMCSurvivorSPPCrashlandSpec: 1
+#         CMSurvivor:
+#         - RMCSurvivorSPPCrashlandSoldier: -1
+#     survivorJobOverrideScenarios:
+#       spp_bar:
+#         CMSurvivorScientist: CMSurvivorDoctor
+#         CMSurvivorCorporate: CMSurvivor
+# #    survivorJobVariantScenarios:
+# #      clf_pods:
+# #        CMSurvivor:
+# #        - : -1
+# #        CMSurvivorCorporate:
+# #        - : 1
+# #        - : -1
+# #        CMSurvivorDoctor:
+# #        - : 1
+# #        - : -1
+# #        CMSurvivorEngineer:
+# #        - : 1
+# #        - : -1
+# #        CMSurvivorSecurity:
+# #        - : 1
+# #        - : -1
+# #        CMSurvivorScientist:
+# #        - : -1
+# #    survivorJobVariantScenarios:
+# #      spp_bar:
+# #        CMSurvivor:
+# #        - : -1
+# #        CMSurvivorCorporate:
+# #        - : 1
+# #        - : -1
+# #        CMSurvivorDoctor:
+# #        - : 1
+# #        - : -1
+# #        CMSurvivorEngineer:
+# #        - : 1
+# #        - : -1
+# #        CMSurvivorSecurity:
+# #        - : 1
+# #        - : -1
+# #        CMSurvivorScientist:
+# #        - : -1
+# #  - type: MCPlanetMapPrototype
+# #    mapsAbove:
+# #    - Maps/_CCM14/Planets/Z-level/Trijent/devtrijent/devtrijent1.yml
+# CCM14-end
 
 - type: entity
   id: RMCPlanetVaradero
@@ -559,7 +561,7 @@
       scenarioProbability: 0.3
     - scenarioName: none
       scenarioProbability: 0.7
-    minPlayers: 30 # CCM14-mappool
+    minPlayers: 50 # CCM14-mappool
     survivorJobVariants:
       CMSurvivor:
       - RMCSurvivorHybrisaCivilian: -1
