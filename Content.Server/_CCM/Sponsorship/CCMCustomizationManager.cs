@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Content.Server.Database;
 using Content.Server._Forge.Sponsor;
 using Content.Shared._CCM.Sponsorship;
-using Content.Shared._Forge.Sponsor;
 using Content.Shared.Preferences;
 using Robust.Shared.IoC;
 using Robust.Shared.Network;
@@ -111,28 +110,28 @@ public sealed class CCMCustomizationManager : IPostInjectInit
         var selections = new List<CCMCustomizationSelectionData>(snapshot.Selections.Length);
         foreach (var selection in snapshot.Selections)
         {
-            var valueId = NormalizeSelectionValue(selection.SlotId, selection.ValueId, customizationUnlocked, status.Level);
+            var valueId = NormalizeSelectionValue(selection.SlotId, selection.ValueId, customizationUnlocked, status.Tier);
             selections.Add(new CCMCustomizationSelectionData(selection.SlotId, valueId));
         }
 
-        // Готовые OOC-теги доступны с Level2, кастомный текстовый тег - только с Level3.
+        // Готовые OOC-теги доступны с SponsorII, кастомный текстовый тег - только SponsorIII.
         var selectedTagId = NormalizeTagId(snapshot.SelectedOocTagId);
         var customTagText = string.Empty;
         if (selectedTagId == CCMOocTags.Custom)
         {
-            if (status.Level >= SponsorLevel.Level3)
+            if (status.Tier >= CCMSponsorshipTier.SponsorIII)
                 customTagText = NormalizeCustomTag(snapshot.CustomOocTagText);
             else
                 selectedTagId = CCMOocTags.None;
         }
-        else if (selectedTagId != CCMOocTags.None && status.Level < SponsorLevel.Level2)
+        else if (selectedTagId != CCMOocTags.None && status.Tier < CCMSponsorshipTier.SponsorII)
         {
             selectedTagId = CCMOocTags.None;
         }
 
-        // OOC-цвет открыт с Level1, LOOC-цвет - с Level2.
-        var selectedOocColorId = NormalizeChatColorId(snapshot.SelectedOocColorId, status.Level, looc: false);
-        var selectedLoocColorId = NormalizeChatColorId(snapshot.SelectedLoocColorId, status.Level, looc: true);
+        // OOC-цвет открыт с SponsorI, LOOC-цвет - с SponsorII.
+        var selectedOocColorId = NormalizeChatColorId(snapshot.SelectedOocColorId, status.Tier, looc: false);
+        var selectedLoocColorId = NormalizeChatColorId(snapshot.SelectedLoocColorId, status.Tier, looc: true);
 
         return new CCMCustomizationSnapshot(
             selections.ToArray(),
@@ -142,7 +141,7 @@ public sealed class CCMCustomizationManager : IPostInjectInit
             selectedLoocColorId);
     }
 
-    private static string NormalizeSelectionValue(string slotId, string valueId, bool customizationUnlocked, SponsorLevel level)
+    private static string NormalizeSelectionValue(string slotId, string valueId, bool customizationUnlocked, CCMSponsorshipTier tier)
     {
         if (!customizationUnlocked &&
             slotId is not "armor_palette" &&
@@ -152,8 +151,8 @@ public sealed class CCMCustomizationManager : IPostInjectInit
             return "default";
         }
 
-        // Скин призрака и скины ксеноморфов входят в "расширенную" кастомизацию (Level3+).
-        if (level < SponsorLevel.Level3 &&
+        // Скин призрака и скины ксеноморфов входят в "расширенную" кастомизацию (SponsorIII).
+        if (tier < CCMSponsorshipTier.SponsorIII &&
             slotId is "ghost"
                   or "xeno_defender"
                   or "xeno_drone"
@@ -239,7 +238,7 @@ public sealed class CCMCustomizationManager : IPostInjectInit
         return sanitized;
     }
 
-    private static string NormalizeChatColorId(string? colorId, SponsorLevel level, bool looc)
+    private static string NormalizeChatColorId(string? colorId, CCMSponsorshipTier tier, bool looc)
     {
         if (string.IsNullOrWhiteSpace(colorId))
             return CCMChatColorPresets.Default;
@@ -250,10 +249,10 @@ public sealed class CCMCustomizationManager : IPostInjectInit
         if (colorId == CCMChatColorPresets.Default)
             return CCMChatColorPresets.Default;
 
-        // OOC-цвет открывается с Level1, LOOC-цвет - с Level2. Все пресеты доступны,
-        // как только открыт сам канал.
-        var requiredLevel = looc ? SponsorLevel.Level2 : SponsorLevel.Level1;
-        return level >= requiredLevel ? colorId : CCMChatColorPresets.Default;
+        // OOC-цвет открывается с SponsorI, LOOC-цвет - с SponsorII. Per-preset min-tier
+        // больше не учитывается: все пресеты доступны как только канал открыт.
+        var requiredTier = looc ? CCMSponsorshipTier.SponsorII : CCMSponsorshipTier.SponsorI;
+        return tier >= requiredTier ? colorId : CCMChatColorPresets.Default;
     }
 
     private async Task LoadData(ICommonSession session, CancellationToken cancel)

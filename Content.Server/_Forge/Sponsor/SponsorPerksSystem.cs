@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using Content.Server._CCM.Sponsorship;
 using Content.Server.GameTicking;
 using Content.Shared._CCM.Sponsorship;
-using Content.Shared._Forge.Sponsor;
 using Robust.Server.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -104,14 +103,14 @@ public sealed class SponsorPerksSystem : EntitySystem
         builder.Append(Loc.GetString("ccm-sponsorship-endgame-header"));
         builder.Append("[/color][/bold]\n");
 
-        foreach (var (ckey, level) in sponsors)
+        foreach (var (ckey, tier) in sponsors)
         {
             builder.Append("[color=");
-            builder.Append(GetLevelColor(level));
+            builder.Append(GetTierColor(tier));
             builder.Append(']');
             builder.Append(ckey);
             builder.Append("[/color] [color=#8E9AA8](");
-            builder.Append(SponsorData.SponsorNames.GetValueOrDefault(level, level.ToString()));
+            builder.Append(Loc.GetString(GetTierLocKey(tier)));
             builder.Append(")[/color]\n");
         }
 
@@ -121,16 +120,22 @@ public sealed class SponsorPerksSystem : EntitySystem
         }
     }
 
-    private static string GetLevelColor(SponsorLevel level)
+    private static string GetTierLocKey(CCMSponsorshipTier tier)
     {
-        // Цвет ника в кредитах = цвет роли из SponsorData, с откатом на пороговый цвет перков.
-        if (SponsorData.SponsorColor.TryGetValue(level, out var roleColor))
-            return roleColor;
-
-        return level switch
+        return tier switch
         {
-            >= SponsorLevel.Level3 => "#F6C453",
-            SponsorLevel.Level2 => "#D96CFF",
+            CCMSponsorshipTier.SponsorIII => "ccm-sponsorship-tier-3-title",
+            CCMSponsorshipTier.SponsorII => "ccm-sponsorship-tier-2-title",
+            _ => "ccm-sponsorship-tier-1-title",
+        };
+    }
+
+    private static string GetTierColor(CCMSponsorshipTier tier)
+    {
+        return tier switch
+        {
+            CCMSponsorshipTier.SponsorIII => "#F6C453",
+            CCMSponsorshipTier.SponsorII => "#D96CFF",
             _ => "#61C9FF",
         };
     }

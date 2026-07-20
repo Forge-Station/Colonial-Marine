@@ -61,33 +61,35 @@ public sealed class SponsorManager : ISharedSponsorManager
             SponsorChanged?.Invoke(user);
     }
 
-    // --- CCM perk resolution (folded in from the former CCMSponsorshipManager) ---
-    // Perk thresholds expressed directly in SponsorLevel terms:
-    //   Level1+ : приоритетный вход, цвет OOC, ckey в конце раунда
-    //   Level2+ : цвет LOOC, готовый OOC-тег, базовая кастомизация (обход таймеров ролей)
-    //   Level3+ : скин призрака, скины ксено, свой OOC-тег, расширенная кастомизация
+    // --- CCM perk tier resolution (folded in from the former CCMSponsorshipManager) ---
+
+    public CCMSponsorshipTier GetTier(NetUserId userId)
+    {
+        return TryGetSponsor(userId, out var level) ? SponsorLevelToTier(level) : CCMSponsorshipTier.None;
+    }
 
     public CCMSponsorshipStatusSnapshot GetStatus(NetUserId userId)
     {
         if (!TryGetSponsor(userId, out var level) || level == SponsorLevel.None)
             return EmptySnapshot();
 
-        var oocColor = SponsorData.SponsorColor.GetValueOrDefault(level, GetDefaultColor(level, false));
+        var tier = SponsorLevelToTier(level);
+        var oocColor = SponsorData.SponsorColor.GetValueOrDefault(level, GetDefaultColor(tier, false));
 
         return new CCMSponsorshipStatusSnapshot(
-            level,
+            tier,
             DonateUrl,
             // Discord-role sponsorship is re-checked on every connect, so there is no
             // meaningful expiration to show; 0 renders as "permanent" on the client.
             0,
             oocColor,
-            GetDefaultColor(level, true),
-            level >= SponsorLevel.Level2);
+            GetDefaultColor(tier, true),
+            tier >= CCMSponsorshipTier.SponsorII);
     }
 
     public bool HasRoleTimerBypass(NetUserId userId)
     {
-        return TryGetSponsor(userId, out var level) && level >= SponsorLevel.Level2;
+        return GetTier(userId) >= CCMSponsorshipTier.SponsorII;
     }
 
     public bool HasRoleTimerBypass(ICommonSession session)
@@ -102,21 +104,40 @@ public sealed class SponsorManager : ISharedSponsorManager
         return !string.IsNullOrWhiteSpace(colorHex);
     }
 
-    public IReadOnlyList<(string Ckey, SponsorLevel Level)> GetConnectedSponsorsForCredits()
+    public IReadOnlyList<(string Ckey, CCMSponsorshipTier Tier)> GetConnectedSponsorsForCredits()
     {
         return _players.Sessions
-            .Select(session => (session.Name, Level: TryGetSponsor(session.UserId, out var level) ? level : SponsorLevel.None))
-            .Where(entry => entry.Level != SponsorLevel.None)
-            .OrderByDescending(entry => entry.Level)
+            .Select(session => (session.Name, Tier: GetTier(session.UserId)))
+            .Where(entry => entry.Tier != CCMSponsorshipTier.None)
+            .OrderByDescending(entry => entry.Tier)
             .ThenBy(entry => entry.Name, StringComparer.OrdinalIgnoreCase)
-            .Select(entry => (entry.Name, entry.Level))
+            .Select(entry => (entry.Name, entry.Tier))
             .ToList();
+    }
+
+    public static CCMSponsorshipTier SponsorLevelToTier(SponsorLevel level)
+    {
+        // Перк-распределение (см. CCMSponsorshipWindow):
+        //   L1     -> SponsorI   (приоритетный вход + цвет OOC + ckey в конце раунда)
+        //   L2     -> SponsorII  (+ цвет LOOC + готовый OOC-тег + базовая кастомизация)
+        //   L3..L6 -> SponsorIII (+ скин призрака + свой OOC-тег + расширенная кастомизация)
+        return level switch
+        {
+            SponsorLevel.None => CCMSponsorshipTier.None,
+            SponsorLevel.Level1 => CCMSponsorshipTier.SponsorI,
+            SponsorLevel.Level2 => CCMSponsorshipTier.SponsorII,
+            SponsorLevel.Level3 => CCMSponsorshipTier.SponsorIII,
+            SponsorLevel.Level4 => CCMSponsorshipTier.SponsorIII,
+            SponsorLevel.Level5 => CCMSponsorshipTier.SponsorIII,
+            SponsorLevel.Level6 => CCMSponsorshipTier.SponsorIII,
+            _ => CCMSponsorshipTier.None,
+        };
     }
 
     private static CCMSponsorshipStatusSnapshot EmptySnapshot()
     {
         return new CCMSponsorshipStatusSnapshot(
-            SponsorLevel.None,
+            CCMSponsorshipTier.None,
             DonateUrl,
             0,
             string.Empty,
@@ -124,13 +145,13 @@ public sealed class SponsorManager : ISharedSponsorManager
             false);
     }
 
-    private static string GetDefaultColor(SponsorLevel level, bool looc)
+    private static string GetDefaultColor(CCMSponsorshipTier tier, bool looc)
     {
-        return level switch
+        return tier switch
         {
-            SponsorLevel.Level1 => looc ? "#7FD7FF" : "#61C9FF",
-            SponsorLevel.Level2 => looc ? "#F2A7FF" : "#D96CFF",
-            >= SponsorLevel.Level3 => looc ? "#FFE082" : "#F6C453",
+            CCMSponsorshipTier.SponsorI => looc ? "#7FD7FF" : "#61C9FF",
+            CCMSponsorshipTier.SponsorII => looc ? "#F2A7FF" : "#D96CFF",
+            CCMSponsorshipTier.SponsorIII => looc ? "#FFE082" : "#F6C453",
             _ => string.Empty,
         };
     }

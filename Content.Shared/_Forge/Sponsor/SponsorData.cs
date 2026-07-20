@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared._Forge.Sponsor;
 
@@ -75,7 +73,6 @@ public sealed class SponsorData
     }
 }
 
-[Serializable, NetSerializable]
 public enum SponsorLevel : byte
 {
     None = 0,
