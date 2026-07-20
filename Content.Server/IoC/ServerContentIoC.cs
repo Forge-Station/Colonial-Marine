@@ -111,6 +111,7 @@ namespace Content.Server.IoC
             IoCManager.Register<Content.Server._Forge.TTS.TTSManager>();
 
             // CCM
+            IoCManager.Register<CCMSponsorshipManager>();
             IoCManager.Register<CCMCustomizationManager>();
         }
     }
