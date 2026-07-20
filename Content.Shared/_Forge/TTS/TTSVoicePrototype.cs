@@ -1,4 +1,4 @@
-using Content.Shared._Forge.Sponsor;
+// using Content.Shared._Forge.Sponsor;
 using Content.Shared.Humanoid;
 using Robust.Shared.Prototypes;
 
@@ -30,6 +30,6 @@ public sealed partial class TTSVoicePrototype : IPrototype
     [DataField("roundStart")]
     public bool RoundStart { get; set; } = true;
 
-    [DataField("sponsorLvL")]
-    public SponsorLevel SponsorLevel = SponsorLevel.None;
+ //   [DataField("sponsorLvL")]
+ //   public SponsorLevel SponsorLevel = SponsorLevel.None;
 }

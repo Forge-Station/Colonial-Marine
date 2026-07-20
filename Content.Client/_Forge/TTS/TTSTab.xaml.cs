@@ -2,7 +2,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
 using Content.Client.Stylesheets;
-using Content.Shared._Forge.Sponsor;
+//using Content.Shared._Forge.Sponsor;
 using Content.Shared._Forge.TTS;
 using Content.Shared.Humanoid;
 using Content.Shared.Preferences;
@@ -22,7 +22,7 @@ public sealed partial class TTSTab : Control
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly ISharedSponsorManager _sponsorMng = default!;
+    // [Dependency] private readonly ISharedSponsorManager _sponsorMng = default!;
     [Dependency] private readonly IResourceCache _resCache = default!;
 
     // Bright colour used to mark the currently selected voice (CM's theme makes the
@@ -187,12 +187,12 @@ public sealed partial class TTSTab : Control
 
     private bool CanUseVoice(TTSVoicePrototype voice)
     {
-        if (voice.SponsorLevel == SponsorLevel.None)
-            return true;
+        //if (voice.SponsorLevel == SponsorLevel.None)
+          //  return true;
 
         var user = _playerManager.LocalUser;
-        if (user != null && _sponsorMng.TryGetSponsor(user.Value, out var level))
-            return level >= voice.SponsorLevel;
+        // if (user != null && _sponsorMng.TryGetSponsor(user.Value, out var level))
+          //  return level >= voice.SponsorLevel;
 
         return false;
     }
